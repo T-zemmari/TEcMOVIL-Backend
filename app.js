@@ -11,7 +11,7 @@ require('crypto').randomBytes(48).toString('hex')
 
 app.use(cors())
 app.use(express.json());
-//app.use(router);
+app.use(router);
 
 
 
