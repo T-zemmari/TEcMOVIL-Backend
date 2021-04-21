@@ -1,0 +1,11 @@
+{
+  "name": "backendprojectfinal",
+  "version": "1.0.0",
+  "description": "Backend Para Mi Aplicacion Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tarek Zemmari Kissani",
+  "license": "ISC"
+}
