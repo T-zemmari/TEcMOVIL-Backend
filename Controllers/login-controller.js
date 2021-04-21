@@ -1,36 +1,34 @@
-const router = require('express').Router();
-const loginController = require('../Controllers/Login-controller');
-const userController = require('../controllers/user-controller');
+const userController = require('../Controllers/user-controller');
+const  bycrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const secret = 'Tarek Es el Mejor '
 
 
-router.post('/', async (req,res)=>{
-
-      try{
-               let password = req.body.password;
-              
-               let email = req.body.email;
-               let token = await loginController.validate(password,email)
-               let user = await userController.getuserByEmail(email);
-               console.log(user);
-               res.status(200).json({token,user});
-      }catch(error){
-       
-          res.status(500).json({message:error.message})
-      }
-    
-        
-    })
+class LoginController{
 
 
 
 
-module.exports = router;
+    async validate(passwordCheck,emailCheck){
 
+        let user =  await userController.getuserByEmail(emailCheck);
+        let password = user.password;
+        console.log("Estoy en la funcion validate en loginController",user.password);
+        console.log("password Check",passwordCheck)
+        let verify = await bycrypt.compare(passwordCheck,password)
+         
+        if(!verify){
+            throw new Error('Contraseña erronea')
+        }
+        let payload ={
+            userId : user.id,
+            admin: user.admin,
+            createdAt: new Date,
+            
+        }
+         return jwt.sign(payload,secret);
+    }
+}
 
-
-
-
-
-
-
-
+let loginController = new LoginController();
+module.exports = loginController;
