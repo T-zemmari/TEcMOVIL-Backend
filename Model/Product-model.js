@@ -8,10 +8,17 @@ const productSchema = new Schema({
           type:String,
           required:true
       },
-      
-      image :{
+    
+      image_front:{
           type:String,
-          required:true
+         
+      },
+
+      image_back:{
+          type:String,
+      },
+      image_lat:{
+          type:String
       },
 
       price :{
@@ -24,9 +31,10 @@ const productSchema = new Schema({
           type:String,
         
       },
+      imgUrl:{
+          type:String,
 
-      
-
+      },
       creationDate: {
         type: Date,
         default: new Date
@@ -34,6 +42,11 @@ const productSchema = new Schema({
 
     
 })
+
+productSchema.methods.setUrl = function setUrl(filename){
+    
+   this.imgUrl = `http://localhost:3002/public/${filename}`
+}
 
 
 const Product = mongoose.model("Product", productSchema);

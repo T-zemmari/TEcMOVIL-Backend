@@ -1,4 +1,4 @@
-const Product = require('../Model/User-model');
+const Product = require('../Model/Product-model');
 
 
 class ProductController{
@@ -11,14 +11,13 @@ class ProductController{
 
     async GetOneProduct(id){
 
-        let id = req.body.id;
 
         return await Product.findById(id);
     }
 
-    async StoreProduct(product){
+    async StoreProduct(MyProduct){
 
-       Product.create(product);
+       Product.create(MyProduct);
     }
 
 

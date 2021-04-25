@@ -11,6 +11,7 @@ require('crypto').randomBytes(48).toString('hex')
 
 app.use(cors())
 app.use(express.json());
+app.use('/public',express.static(`${__dirname}/libs`))
 app.use(router);
 
 
