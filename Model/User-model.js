@@ -29,7 +29,7 @@ const userSchema = new Schema({
           type:String,
           required:true
       },
-      address: {
+      adress: {
           type:String,
           
       },

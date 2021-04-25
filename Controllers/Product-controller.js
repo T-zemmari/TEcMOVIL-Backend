@@ -19,6 +19,9 @@ class ProductController{
 
        Product.create(MyProduct);
     }
+    async updateProduct(id,product){
+        Product.findByIdAndUpdate(id,product)
+    }
 
 
 

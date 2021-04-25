@@ -8,32 +8,30 @@ const productSchema = new Schema({
           type:String,
           required:true
       },
-    
-      image_front:{
-          type:String,
-         
-      },
-
-      image_back:{
-          type:String,
-      },
-      image_lat:{
-          type:String
-      },
-
       price :{
           type:String,
-          required :true,
-       
+          required :true
       },
 
       description: {
           type:String,
         
       },
+      rate:{
+          type:Number
+      },
+      color:{
+          type:String,
+          default:'No especificado'
+      }
+      ,
       imgUrl:{
           type:String,
 
+      },
+      pantalla:{
+          type:String,
+          default:'No especificado'
       },
       creationDate: {
         type: Date,

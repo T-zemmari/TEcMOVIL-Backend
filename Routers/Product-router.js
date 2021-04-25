@@ -21,14 +21,30 @@ const Product = require('../Model/Product-model');
 
    });
 
+   router.get('/',async (req,res)=>{
+
+    try{
+         let id= req.body._id;
+
+        res.status(200).json(await productController.GetOneProduct(id))
+    }catch(error){
+        res.status(500).json({
+            error:error.message
+        })
+    }
+     
+
+});
+
+
    router.post('/',upload.single('image'),async (req,res)=>{
 
       try{
 
 
-          const {name,price,description} = req.body;
+          const {name,price,description,rate,color,pantalla} = req.body;
           const MyProduct = Product({
-              name,price,description
+              name,price,description,rate,color,pantalla
           })
 
           
@@ -53,5 +69,22 @@ const Product = require('../Model/Product-model');
 
 
    })
+
+   
+   router.put('/:id/update',async (req,res)=>{
+
+    try{
+         let id= req.body._id;
+         //let product = await productController.GetOneProduct(id);
+         //console.log(product)
+        res.status(200).json(await productController.updateProduct(id,product))
+    }catch(error){
+        res.status(500).json({
+            error:error.message
+        })
+    }
+     
+
+});
 
    module.exports = router;
