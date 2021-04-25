@@ -40,6 +40,10 @@ const userSchema = new Schema({
       payment:{
           type:String,
       },
+      admin:{
+          type:Boolean,
+          default:false
+      },
 
       creationDate: {
         type: Date,
