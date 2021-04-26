@@ -42,9 +42,9 @@ const Product = require('../Model/Product-model');
       try{
 
 
-          const {name,price,description,rate,color,pantalla} = req.body;
+          const {name,price,description,rate,color,pantalla,imgUrl} = req.body;
           const MyProduct = Product({
-              name,price,description,rate,color,pantalla
+              name,price,description,rate,color,pantalla,imgUrl
           })
 
           
