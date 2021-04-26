@@ -33,6 +33,14 @@ const productSchema = new Schema({
           type:String,
           default:'No especificado'
       },
+      bateria:{
+          type:String,
+          default:'No especificado'
+      },
+      Procesador:{
+          type:String,
+          default:'No especificado'
+      },
       creationDate: {
         type: Date,
         default: new Date
