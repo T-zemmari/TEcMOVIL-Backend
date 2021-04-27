@@ -1,17 +1,18 @@
 const router = require("express").Router();
-const productController=require('../Controllers/Product-controller');
+const AccessorioController=require('../Controllers/Accessorio-controller');
 const upload = require('../libs/Storage.js');
-const Product = require('../Model/Product-model');
+const Accessorio = require("../Model/Accessorio");
 
 
-   //------------- Listar todos los accessorios---------------//
+
+  //------------- Listar todos los accessorios---------------//
 
    router.get('/',async (req,res)=>{
 
        try{
            
 
-           res.status(200).json(await productController.ListAllProducts())
+           res.status(200).json(await AccessorioController.ListAllAccessorios())
        }catch(error){
            res.status(500).json({
                error:error.message
@@ -28,7 +29,7 @@ const Product = require('../Model/Product-model');
     try{
          let id= req.body._id;
 
-        res.status(200).json(await productController.GetOneProduct(id))
+        res.status(200).json(await AccessorioController.GetOneAccessory(id))
     }catch(error){
         res.status(500).json({
             error:error.message
@@ -39,26 +40,28 @@ const Product = require('../Model/Product-model');
 });
 
 
+//----------Guardar un accessorio en la base de datos---//  
+
    router.post('/',upload.single('image'),async (req,res)=>{
 
       try{
 
 
-          const {name,price,description,rate,color,pantalla,imgUrl} = req.body;
-          const MyProduct = Product({
-              name,price,description,rate,color,pantalla,imgUrl
+          const {name,price,description,rate,color,stock,imgUrl} = req.body;
+          const MyAccessory = Accessorio({
+              name,price,description,rate,color,stock,imgUrl
           })
 
           
           if(req.file){
 
             const {filename}=req.file;
-            MyProduct.setUrl(filename)
+            MyAccessory.setUrl(filename)
           }
     
-        const product = await productController.StoreProduct(MyProduct);
+        const Accessory = await AccessorioController.StoreAccessory(MyAccessory);
         const status = "Success";
-        return res.status(200).json({ status, product });
+        return res.status(200).json({ status, Accessory });
      
      
         
@@ -72,6 +75,9 @@ const Product = require('../Model/Product-model');
 
    })
 
+    //---------Modificar los datos del producto-------------//  
+
+
    
    router.put('/:id/update',async (req,res)=>{
 
@@ -79,7 +85,7 @@ const Product = require('../Model/Product-model');
          let id= req.body._id;
          //let product = await productController.GetOneProduct(id);
          //console.log(product)
-        res.status(200).json(await productController.updateProduct(id,product))
+        res.status(200).json(await AccessorioController.updateAccessory(id,Accessory))
     }catch(error){
         res.status(500).json({
             error:error.message

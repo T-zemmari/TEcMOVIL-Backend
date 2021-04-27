@@ -24,6 +24,11 @@ const userSchema = new Schema({
           type:String,
           required:true
       },
+      nif:{
+          type:String,
+          default:'No se ha especificado'
+      }
+      ,
 
       phone: {
           type:String,
