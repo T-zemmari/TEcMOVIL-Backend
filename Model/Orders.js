@@ -25,12 +25,7 @@ const orderSchema = new Schema({
           type:String,
           required:true
       },
-      nif:{
-          type:String,
-          default:'No se ha especificado'
-      }
-      ,
-
+    
       Product_info: {
           type:Object,
           required:true
