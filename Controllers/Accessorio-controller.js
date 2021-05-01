@@ -12,7 +12,7 @@ class AccessorioController{
 
   //-------------Listar solo un accessorio-----------------//  
 
-    async GetOneProduct(id){
+    async GetOneAccessory(id){
 
 
         return await Accessorio.findById(id);

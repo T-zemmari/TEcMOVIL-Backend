@@ -56,9 +56,9 @@ const Product = require('../Model/Product-model');
             MyProduct.setUrl(filename)
           }
     
-        const product = await productController.StoreProduct(MyProduct);
+        const Movile = await productController.StoreProduct(MyProduct);
         const status = "Success";
-        return res.status(200).json({ status, product });
+        return res.status(200).json({ status, Movile });
      
      
         

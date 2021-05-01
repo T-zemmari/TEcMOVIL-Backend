@@ -8,10 +8,14 @@ const accessorioSchema = new Schema({
           type:String,
           required:true
       },
-      price :{
-          type:String,
+      priceWithoutIva :{
+          type:Number,
           required :true
       },
+      priceWithIva :{
+        type:Number,
+        required :true
+    },
 
       description: {
           type:String,
@@ -25,11 +29,14 @@ const accessorioSchema = new Schema({
           default:'No especificado'
       }
       ,
-      imgUrl:{
+      image1:{
           type:String,
 
       },
-     
+      image2:{
+        type:String,
+
+    },
       creationDate: {
         type: Date,
         default: new Date
@@ -38,9 +45,12 @@ const accessorioSchema = new Schema({
     
 })
 
-accessorioSchema.methods.setUrl = function setUrl(filename){
+accessorioSchema.methods.setUrl = function setUrl(filename1,filename2){
     
-   this.imgUrl = `http://localhost:3002/public/${filename}`
+   this.image1 = `http://localhost:3002/public/${filename1}`;
+   this.image2 =`http://localhost:3002/public/${filename2}`;
+   
+
 }
 
 

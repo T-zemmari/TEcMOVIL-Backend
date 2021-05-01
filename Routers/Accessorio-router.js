@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const AccessorioController=require('../Controllers/Accessorio-controller');
 const upload = require('../libs/Storage.js');
-const Accessorio = require("../Model/Accessorio");
+const Accessorio= require('../Model/Accessorio');
 
 
 
@@ -12,7 +12,7 @@ const Accessorio = require("../Model/Accessorio");
        try{
            
 
-           res.status(200).json(await AccessorioController.ListAllAccessorios())
+           res.status(200).json(await AccessorioController.ListAllAccessories())
        }catch(error){
            res.status(500).json({
                error:error.message
@@ -42,21 +42,22 @@ const Accessorio = require("../Model/Accessorio");
 
 //----------Guardar un accessorio en la base de datos---//  
 
-   router.post('/',upload.single('image'),async (req,res)=>{
+   router.post('/',upload.fields([{name:'image1'},{name:'image2'}]),async (req,res)=>{
 
       try{
 
 
-          const {name,price,description,rate,color,stock,imgUrl} = req.body;
+          const {name,priceWithoutIva,priceWithIva,description,rate,color,stock,image1,image2} = req.body;
           const MyAccessory = Accessorio({
-              name,price,description,rate,color,stock,imgUrl
+              name,priceWithoutIva,priceWithIva,description,rate,color,stock,image1,image2
           })
 
           
-          if(req.file){
+          if(req.files){
 
-            const {filename}=req.file;
-            MyAccessory.setUrl(filename)
+            const filename1=req.files.image1[0].filename;
+            const filename2=req.files.image2[0].filename;
+            MyAccessory.setUrl(filename1,filename2);
           }
     
         const Accessory = await AccessorioController.StoreAccessory(MyAccessory);
