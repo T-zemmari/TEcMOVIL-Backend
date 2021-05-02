@@ -37,7 +37,9 @@ class UserController{
    // Modificar o actualizar los datos del usuario.
   
    async updateUser(id, user) {
-    return User.findByIdAndUpdate(id, user);
+
+    return User.findByIdAndUpdate(id, user)
+  
 };
  
   // Borrar a un usuario de la base de datos //

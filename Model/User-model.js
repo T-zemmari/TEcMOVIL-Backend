@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const ObjectId = Schema.ObjectId;
 
 const userSchema = new Schema({
+
+      
 
       name :{
           type:String,
@@ -43,7 +45,7 @@ const userSchema = new Schema({
 
       },
       payment:{
-          type:String,
+          type:Object,
       },
       admin:{
           type:Boolean,

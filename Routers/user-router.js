@@ -46,12 +46,16 @@ router.post("/", async(req, res) => {
 
 
 
-router.put('/:id',async (req,res)=>{
+router.put('/',async (req,res)=>{
     try{
        
        let id = req.body.id;
+       console.log(req.body)
+       console.log(id)
        let status = 'Success';
-       let user = await userController.updateUser(id,user)
+       let user = await userController.updateUser(id,req.body,{useFindAndModify: false})
+       
+       console.log(user)
        res.status(200).json({status,user});
     }catch(error){
         res.status(500).send({message:error.message});
