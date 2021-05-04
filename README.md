@@ -64,7 +64,7 @@ Alternatively, the project may be downloaded from <a href="https://github.com/T-
 
 
 
-We have used Trello for the distribution and control of tasks using Kanban and to plan the database structure and the API endpoints.
+ Trello was used for the distribution and control of tasks using Kanban and to plan the database structure and the API endpoints.
 
 ##  Postman
 
