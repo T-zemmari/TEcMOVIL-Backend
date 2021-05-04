@@ -42,7 +42,7 @@ This project was created for educational purposes at <a href="https://geekshubsa
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2de304f6ef9dd9834156?action=collection%2Fimport)
 
-Alternatively, the project may be downloaded from <a href="https://github.com/T-zemmari/Backend_Projecto_Final/archive/refs/heads/main.zip">this link</a>. You're welcome to borrow our code.
+Alternatively, the project may be downloaded from <a href="https://github.com/T-zemmari/Backend_Projecto_Final/archive/refs/heads/main.zip">this link</a>. You're welcome to borrow the code.
 
 <br>
 
