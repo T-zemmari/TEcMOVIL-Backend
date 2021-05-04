@@ -40,7 +40,7 @@ This project was created for educational purposes at <a href="https://geekshubsa
 
 ### <b>[Click here to view the API documentation](https://documenter.getpostman.com/view/14551935/TzRNEpuz)</b> or
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e7eb70030ba882a484c1)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2de304f6ef9dd9834156?action=collection%2Fimport)
 
 Alternatively, the project may be downloaded from <a href="https://github.com/T-zemmari/Backend_Projecto_Final/archive/refs/heads/main.zip">this link</a>. You're welcome to borrow our code.
 
