@@ -39,21 +39,24 @@ const Product = require('../Model/Product-model');
 });
 
 
-   router.post('/',upload.single('image'),async (req,res)=>{
+   router.post('/',upload.fields([{name:'imgUrl'},{name:'image2'}]),async (req,res)=>{
 
       try{
 
 
-          const {name,price,description,rate,color,pantalla,imgUrl} = req.body;
+          const {name,price,description,rate,color,pantalla,imgUrl,image2} = req.body;
           const MyProduct = Product({
-              name,price,description,rate,color,pantalla,imgUrl
+              name,price,description,rate,color,pantalla,imgUrl,image2
           })
 
           
-          if(req.file){
+          if(req.files){
 
-            const {filename}=req.file;
-            MyProduct.setUrl(filename)
+            const filename1=req.files.imgUrl[0].filename;
+            const filename2=req.files.image2[0].filename;
+            console.log(filename1,filename2)
+         
+            MyProduct.setUrl(filename1,filename2)
           }
     
         const Movile = await productController.StoreProduct(MyProduct);

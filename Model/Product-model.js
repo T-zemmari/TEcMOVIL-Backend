@@ -6,11 +6,11 @@ const productSchema = new Schema({
 
       name :{
           type:String,
-          required:true
+          
       },
       price :{
           type:String,
-          required :true
+          
       },
 
       description: {
@@ -28,6 +28,9 @@ const productSchema = new Schema({
       imgUrl:{
           type:String,
 
+      },
+      image2:{
+          type:String,
       },
       pantalla:{
           type:String,
@@ -49,9 +52,11 @@ const productSchema = new Schema({
     
 })
 
-productSchema.methods.setUrl = function setUrl(filename){
+productSchema.methods.setUrl = function setUrl(filename1,filename2){
     
-   this.imgUrl = `http://localhost:3002/public/${filename}`
+   this.imgUrl = `http://localhost:3002/public/${filename1}`;
+   this.image2 = `http://localhost:3002/public/${filename}`;
+
 }
 
 
