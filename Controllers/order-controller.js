@@ -33,7 +33,7 @@ class OrderController{
 
    // Modificar o actualizar los datos del usuario.
   
-   async updateOrder(id, user) {
+   async updateOrder(id, order) {
     return Order.findByIdAndUpdate(id, order);
 };
  
@@ -49,4 +49,4 @@ class OrderController{
 }
 
 let orderController = new OrderController();
-module.exports= OrderController;
+module.exports= orderController;

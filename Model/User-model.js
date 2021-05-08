@@ -38,6 +38,7 @@ const userSchema = new Schema({
       },
       adress: {
           type:String,
+          default:'Calle Blasco Ibañez 21-44 46008 Valencia'
           
       },
       born:{
@@ -46,6 +47,12 @@ const userSchema = new Schema({
       },
       payment:{
           type:Object,
+          default:{
+              nombre_tarjeta :"Tarik Zemmari kissani",
+              Numero_de_laTarjeta  : "4444-5555-4444-5252",
+              Fecha_expiracion:"20/22",
+              CVC:585
+          }
       },
       admin:{
           type:Boolean,

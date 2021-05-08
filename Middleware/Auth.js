@@ -4,7 +4,7 @@ const secret = 'Tarek es el mejor'
 
 
 
-const authAdmin =  (req,res,next)=>{
+const auth =  (req,res,next)=>{
 
     try{
         
@@ -28,4 +28,4 @@ const authAdmin =  (req,res,next)=>{
 
 
 
-module.exports = authAdmin;
+module.exports = auth;
