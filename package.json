@@ -4,19 +4,22 @@
   "description": "Backend with express and mysql Dentist Apointment",
   "main": "index.js",
   "scripts": {
-    "start_mysql": "docker-compose up -d",
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
-  "author": "Tarek and Fede",
+  "author": "Tarek Zemmari Kissani",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.2.5",
-    "nodemon": "^2.0.7",
-    "sequelize": "^6.5.0"
+    "mongo": "^0.1.0",
+    "mongoose": "^5.12.5",
+    "multer": "^1.4.2"
   }
 }
