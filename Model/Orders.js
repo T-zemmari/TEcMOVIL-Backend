@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
-
+const ObjectId = mongoose.Types.ObjectId;
 const orderSchema = new Schema({
 
       
+     orderID: ObjectId,
 
-      user_id :{
-          type:String,
-          required:true
-      },
+      userId: { 
+        type: ObjectId, 
+        ref: "User",
+        required: true
+    },
       
       payment :{
           type:Object,

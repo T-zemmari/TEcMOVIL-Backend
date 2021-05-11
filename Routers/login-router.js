@@ -11,7 +11,7 @@ router.post('/', async (req,res)=>{
                let email = req.body.email;
                let token = await loginController.validate(password,email)
                let user = await userController.getuserByEmail(email);
-               console.log(user);
+             
                res.status(200).json({token,user});
       }catch(error){
        

@@ -51,14 +51,14 @@ const Repuesto= require('../Model/Repuesto');
           const myRepuesto = Repuesto({
             marca,modelo,pantalla,bateria,software,conectorDeCarga,microfono,auricular,buzz,image1,image2
           })
-          console.log(myRepuesto);
+  
 
           
           if(req.files){
 
             const filename1=req.files.image1[0].filename;
             const filename2=req.files.image2[0].filename;
-            console.log(filename1,filename2)
+         
             myRepuesto.setUrl(filename1,filename2);
             
           }

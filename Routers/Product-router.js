@@ -54,7 +54,7 @@ const Product = require('../Model/Product-model');
 
             const filename1=req.files.imgUrl[0].filename;
             const filename2=req.files.image2[0].filename;
-            console.log(filename1,filename2)
+           
          
             MyProduct.setUrl(filename1,filename2)
           }

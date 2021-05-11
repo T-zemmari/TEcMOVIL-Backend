@@ -43,7 +43,8 @@ const auth = require('../Middleware/Auth');
 router.post("/",async(req, res) => {
     try {
 
-        console.log(req.body)
+        
+
         const order = await orderController.CreateOrder(req.body);
         const status = "Success";
         res.json({ status, order });
