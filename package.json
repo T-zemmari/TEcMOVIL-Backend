@@ -7,9 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "heroku-postbuild": "npm run build"
-    
   },
-
   "author": "Tarik Zemmari Kissani",
   "license": "ISC",
   "dependencies": {
@@ -22,7 +20,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongo": "^0.1.0",
     "mongoose": "^5.12.5",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "serve": "^11.3.2"
   },
   "engines": {
     "node": "12.16.1"
