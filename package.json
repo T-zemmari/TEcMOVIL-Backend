@@ -1,7 +1,7 @@
 {
-  "name": "project-backend-dentist-apointment",
+  "name": "backendtecmovil",
   "version": "1.0.0",
-  "description": "Backend with express and mysql Dentist Apointment",
+  "description": "Backend with express and mongoose TEcMOVIL",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,10 +10,9 @@
     
   },
 
-  "author": "Tarek Zemmari Kissani",
+  "author": "Tarik Zemmari Kissani",
   "license": "ISC",
   "dependencies": {
-    "@material-ui/icons": "^4.11.2",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
