@@ -3,7 +3,7 @@ const router = require('./router');
 const db = require('./db');
 const cors = require('cors')
 const app = express();
-const Port = 3002;
+
 require('crypto').randomBytes(48).toString('hex')
 
 
@@ -18,7 +18,7 @@ app.use(router);
 
 
 db.then(() => {
-    app.listen(process.env.PORT || Port, () => {
-        console.log(`Escuchando en el puerto ${Port}`)
+    app.listen(process.env.PORT || 3002, () => {
+        console.log(`Escuchando en el puerto ${3002}`)
     })
 }).catch(console.log);
