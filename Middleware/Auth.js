@@ -1,19 +1,18 @@
-
 const login = require('../routers/login-router');
 const jwt = require('jsonwebtoken');
-const secret = 'Tarek Y Fede Son el Mejor Equipo de geeksHubs'
+const secret = 'Tarek es el mejor'
 
 
 
-const authenticateAdmin =  (req,res,next)=>{
+const auth =  (req,res,next)=>{
 
     try{
-       console.log('middleware')
+        
       let token =  req.headers.authorization.split(' ')[1];
     
       let payload=  jwt.verify(token,secret);
       
-      if(!payload.admin){
+      if(payload.userId != req.params.id){
           throw new Error('No se ha conseguido la verficiacion')
       }
       return next();
@@ -29,4 +28,4 @@ const authenticateAdmin =  (req,res,next)=>{
 
 
 
-module.exports = authenticateAdmin;
+module.exports = auth;
