@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express();
 const port =3002;
 
-require('crypto').randomBytes(48).toString('hex')
+//require('crypto').randomBytes(48).toString('hex')
 
 
 //Midelwares
@@ -21,5 +21,5 @@ app.use('/public',express.static(`${__dirname}/libs`));
 
 
 db.then(() => {
-    app.listen(process.env.PORT || port, () => console.log(`Node server running on http://localhost:${port}`));
+    app.listen(process.env.PORT || port, () => console.log(`Server running on http://localhost:${port}`));
 }).catch((err) => console.log(err.message));

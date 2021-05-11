@@ -4,12 +4,13 @@ const ObjectId = mongoose.Types.ObjectId;
 const orderSchema = new Schema({
 
       
-     orderID: ObjectId,
+      orderID: ObjectId,
 
       userId: { 
         type: ObjectId, 
         ref: "User",
-        required: true
+        required: true,
+        unique:false
     },
       
       payment :{
@@ -24,22 +25,13 @@ const orderSchema = new Schema({
       },
 
     
-     precio_total:{
+      precio_total:{
          type:String
      }
 
     
 })
 
-const toJSONConfig = {
-    transform: (doc, ret, opt) => {
-        delete ret['password']
-        return ret
-    }
-};
 
-
-
-orderSchema.set('toJSON', toJSONConfig);
 const Order = mongoose.model("Order", orderSchema);
 module.exports = Order;
