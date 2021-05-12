@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const RepuestoController=require('../Controllers/repuesto-Controller');
+const RepuestoController=require('../Controllers/Repuesto-Controller');
 const upload = require('../libs/Storage.js');
 const Repuesto= require('../Model/Repuesto');
 

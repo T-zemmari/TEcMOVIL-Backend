@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const bateriaController=require('../Controllers/Baterias-controller.js');
+const bateriaController=require('../Controllers/Baterias-Controller.js');
 const Bateria= require('../Model/Bateria');
 const upload = require('../libs/Storage.js');
 

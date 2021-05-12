@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const AccessorioController=require('../Controllers/Accessorio-controller');
+const AccessorioController=require('../Controllers/Accessorio-Controller');
 const upload = require('../libs/Storage.js');
 const Accessorio= require('../Model/Accessorio');
 

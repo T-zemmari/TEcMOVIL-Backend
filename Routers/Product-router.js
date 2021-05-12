@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const productController=require('../Controllers/Product-controller');
+const productController=require('../Controllers/Product-Controller');
 const upload = require('../libs/Storage.js');
 const Product = require('../Model/Product-model');
 
