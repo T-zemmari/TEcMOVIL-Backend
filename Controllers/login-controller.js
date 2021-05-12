@@ -1,4 +1,4 @@
-const userController = require('../Controllers/user-controller');
+const userController = require('./user-controller');
 const  bycrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const secret = 'Tarek Es el Mejor '
