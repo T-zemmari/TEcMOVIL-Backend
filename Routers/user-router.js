@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const userController = require('../Controllers/User-Controller');
+const userController = require('../Controllers/user-Controller');
+const authAdmin = require('../Middleware/Auth-admin');
+const auth = require('../Middleware/Auth');
 
-
-
-router.get('/',async (req,res)=>{
+router.get('/',authAdmin,async (req,res)=>{
      
     try{
      res.status(200).json(await userController.getAllUsers());
@@ -13,7 +13,7 @@ router.get('/',async (req,res)=>{
 
 });
 
-router.get('/:id',async (req,res)=>{
+router.get('/:id',authAdmin,async (req,res)=>{
     try{
     let id = req.params.id;    
     res.status(200).json(await userController.getUserById(id));
@@ -22,7 +22,7 @@ router.get('/:id',async (req,res)=>{
     }
 });
 
-router.get('/',async (req,res)=>{
+router.get('/',authAdmin,async (req,res)=>{
     try{
         let user = await userController.getUserByEmail(email);
         res.status(200).json(user);
@@ -31,7 +31,7 @@ router.get('/',async (req,res)=>{
     }
 });
 
-router.post("/", async(req, res) => {
+router.post("/",async(req, res) => {
     try {
         const user = await userController.CreateUser(req.body);
         const status = "Success";
@@ -46,7 +46,7 @@ router.post("/", async(req, res) => {
 
 
 
-router.put('/',async (req,res)=>{
+router.put('/',auth,async (req,res)=>{
     try{
        
        let id = req.body.id;
@@ -64,7 +64,7 @@ router.put('/',async (req,res)=>{
 
 })
 
-router.delete('/id:',async (req,res)=>{
+router.delete('/id:',authAdmin,async (req,res)=>{
     try{
        res.json(await userController.destroy(id));
     }catch(error){

@@ -13,14 +13,13 @@ class LoginController{
 
         let user =  await userController.getuserByEmail(emailCheck);
         let password = user.password;
-        console.log("Estoy en la funcion validate en loginController",user.password);
-        console.log("password Check",passwordCheck)
         let verify = await bycrypt.compare(passwordCheck,password)
          
         if(!verify){
             throw new Error('Contraseña erronea')
         }
         let payload ={
+            user:user,
             userId : user.id,
             admin: user.admin,
             createdAt: new Date,
