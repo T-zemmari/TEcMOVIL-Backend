@@ -19,7 +19,7 @@ class OrderController{
 
    //Obtener a un usuario mediante su id //
 
-   async getorderById(id){
+   async getOrderById(id){
 
     return Order.findById(id);
    }

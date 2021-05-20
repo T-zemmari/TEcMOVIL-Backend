@@ -28,7 +28,7 @@ const auth = require('../Middleware/Auth');
     try{
          let id= req.body._id;
 
-        res.status(200).json(await orderController.getorderById(id))
+        res.status(200).json(await orderController.getOrderById(id))
     }catch(error){
         res.status(500).json({
             error:error.message
@@ -38,15 +38,39 @@ const auth = require('../Middleware/Auth');
 
 });
 
-
-//----------Guardar un order en la base de datos---//  
-router.post("/",async(req, res) => {
+router.get("/:id/my-orders",auth,async(req, res) => {
     try {
 
         
+       
+        let userID = req.params.id;
+        console.log(userID)
+        const order = await orderController.getAllOrders();
+        const ordersFiltred = order.filter(element =>  { return element.userId == userID })
+        console.log(userID,ordersFiltred)
+      
+        const status = "Success";
+       
+        res.json({ status, ordersFiltred });
+         
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message
+        });
+    };
+});
 
+
+   //----------Guardar un order en la base de datos---//  
+
+   router.post("/:id/my-orders",auth,async(req, res) => {
+    try {
+
+        
+       
         const order = await orderController.CreateOrder(req.body);
         const status = "Success";
+        
         res.json({ status, order });
          
     } catch (error) {
