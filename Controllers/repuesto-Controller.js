@@ -1,36 +1,36 @@
 const Repuesto = require('../Model/Repuesto');
 
 
-class RepuestoController{
+class RepuestoController {
 
   //------------- Listar todos los Repuestos---------------//
 
-    async ListAllRepuestos(){
+  async ListAllRepuestos() {
 
-        return await Repuesto.find();
-    }
+    return await Repuesto.find();
+  }
 
   //-------------Listar solo un accessorio-----------------//  
 
-    async GetOneRepuesto(id){
+  async GetOneRepuesto(id) {
 
 
-        return await Repuesto.findById(id);
-    }
+    return await Repuesto.findById(id);
+  }
 
   //----------Guardar un Repuesto en la base de datos---//  
 
-    async StoreRepuesto(myRepuesto){
+  async StoreRepuesto(myRepuesto) {
 
-       return await Repuesto.create(myRepuesto);
-    }
+    return await Repuesto.create(myRepuesto);
+  }
 
 
   //---------Modificar los datos del producto-------------//  
 
-    async updateRepuesto(id,Repuesto){
-        return await Repuesto.findByIdAndUpdate(id,Repuesto)
-    }
+  async updateRepuesto(id, Repuesto) {
+    return await Repuesto.findByIdAndUpdate(id, Repuesto)
+  }
 
 
 
@@ -41,4 +41,4 @@ class RepuestoController{
 }
 
 let repuestoController = new RepuestoController();
-module.exports= repuestoController;
+module.exports = repuestoController;

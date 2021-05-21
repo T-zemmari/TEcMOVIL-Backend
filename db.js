@@ -11,11 +11,11 @@ const MONGO_PASSWORD = process.env.MONGO_PASSWORD || null;
 
 const QUERY_STRING = MONGO_USER ?
 
-`${MONGO_SERVER}://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_CLUSTER}/${MONGO_DBNAME}?retryWrites=true&w=majority`
+    `${MONGO_SERVER}://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_CLUSTER}/${MONGO_DBNAME}?retryWrites=true&w=majority`
 
-:
+    :
 
-`mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DBNAME}`
+    `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DBNAME}`
 
 
 
@@ -23,8 +23,8 @@ const QUERY_STRING = MONGO_USER ?
 
 
 
-const db = mongoose.connect(QUERY_STRING,{useNewUrlParser: true, useUnifiedTopology: true})
-.then(console.log('Connected to Database'))
-.catch((error) => console.log(error));
+const db = mongoose.connect(QUERY_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(console.log('Connected to Database'))
+    .catch((error) => console.log(error));
 
 module.exports = db;

@@ -3,7 +3,7 @@ const router = require('./router');
 const db = require('./db');
 const cors = require('cors')
 const app = express();
-const port =3002;
+const port = 3002;
 
 //require('crypto').randomBytes(48).toString('hex')
 
@@ -14,7 +14,7 @@ const port =3002;
 app.use(express.json());
 app.use(cors());
 app.use(router);
-app.use('/public',express.static(`${__dirname}/libs`));
+app.use('/public', express.static(`${__dirname}/libs`));
 
 
 

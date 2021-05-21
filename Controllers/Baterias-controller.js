@@ -4,41 +4,41 @@ const Bateria = require('../Model/Bateria');
 
 
 
-class BateriaController{
+class BateriaController {
 
 
     // Obtener todas las baterias //
 
-   async getAllBateriasList(baterias){
+    async getAllBateriasList(baterias) {
 
-      return  Bateria.find(baterias)
-   }
-  
-   //Obtener a una bateria mediante su id //
+        return Bateria.find(baterias)
+    }
 
-   async getBateriaById(id){
+    //Obtener a una bateria mediante su id //
 
-    return Bateria.findById(id);
-   }
+    async getBateriaById(id) {
 
-   // Guardar a un bateria en la base de datos //
+        return Bateria.findById(id);
+    }
 
-   async CreateBateria(bateria){
+    // Guardar a un bateria en la base de datos //
 
-   return Bateria.create(bateria);
-   }
+    async CreateBateria(bateria) {
 
-   // Modificar o actualizar los datos de la bateria.
-  
-   async updateBateria(id, bateria) {
-    return Bateria.findByIdAndUpdate(id, bateria);
-};
- 
-  // Borrar a una bateria de la base de datos //
+        return Bateria.create(bateria);
+    }
 
-   async destroy(id) {
-    return Bateria.findByIdAndRemove(id);
-};
+    // Modificar o actualizar los datos de la bateria.
+
+    async updateBateria(id, bateria) {
+        return Bateria.findByIdAndUpdate(id, bateria);
+    };
+
+    // Borrar a una bateria de la base de datos //
+
+    async destroy(id) {
+        return Bateria.findByIdAndRemove(id);
+    };
 
 
 
@@ -46,4 +46,4 @@ class BateriaController{
 }
 
 let bateriaController = new BateriaController();
-module.exports= bateriaController;
+module.exports = bateriaController;

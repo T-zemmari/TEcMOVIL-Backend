@@ -4,44 +4,44 @@ const Order = require('../Model/Orders');
 
 
 
-class OrderController{
+class OrderController {
 
 
     // Obtener todos los usuarios //
 
-   async getAllOrders(orders){
+    async getAllOrders(orders) {
 
-      return  Order.find(orders)
-   }
-   async getorderByEmail(email){
-       return Order.findOne({email})
-   }
+        return Order.find(orders)
+    }
+    async getorderByEmail(email) {
+        return Order.findOne({ email })
+    }
 
-   //Obtener a un usuario mediante su id //
+    //Obtener a un usuario mediante su id //
 
-   async getOrderById(id){
+    async getOrderById(id) {
 
-    return Order.findById(id);
-   }
+        return Order.findById(id);
+    }
 
-   // Guardar a un usuario en la base de datos //
+    // Guardar a un usuario en la base de datos //
 
-   async CreateOrder(order){
+    async CreateOrder(order) {
 
-   return Order.create(order);
-   }
+        return Order.create(order);
+    }
 
-   // Modificar o actualizar los datos del usuario.
-  
-   async updateOrder(id, order) {
-    return Order.findByIdAndUpdate(id, order);
-};
- 
-  // Borrar a un usuario de la base de datos //
+    // Modificar o actualizar los datos del usuario.
 
-   async destroy(id) {
-    return Order.findByIdAndRemove(id);
-};
+    async updateOrder(id, order) {
+        return Order.findByIdAndUpdate(id, order);
+    };
+
+    // Borrar a un usuario de la base de datos //
+
+    async destroy(id) {
+        return Order.findByIdAndRemove(id);
+    };
 
 
 
@@ -49,4 +49,4 @@ class OrderController{
 }
 
 let orderController = new OrderController();
-module.exports= orderController;
+module.exports = orderController;

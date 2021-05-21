@@ -3,33 +3,33 @@ const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 const orderSchema = new Schema({
 
-      
-      orderID: ObjectId,
 
-      userId: { 
-        type: ObjectId, 
+    orderID: ObjectId,
+
+    userId: {
+        type: ObjectId,
         ref: "User",
         required: true,
-        unique:false
+        unique: false
     },
-      
-      payment :{
-          type:Object,
-          required:true
-      },
 
-      product :{
-          type:Object,
-          required :true,
-          
-      },
+    payment: {
+        type: Object,
+        required: true
+    },
 
-    
-      precio_total:{
-         type:String
-     }
+    product: {
+        type: Object,
+        required: true,
 
-    
+    },
+
+
+    precio_total: {
+        type: String
+    }
+
+
 })
 
 

@@ -1,37 +1,37 @@
 const Product = require('../Model/Product-model');
 
 
-class ProductController{
+class ProductController {
 
-     //------------- Listar todos los accessorios---------------//
+    //------------- Listar todos los accessorios---------------//
 
 
-    async ListAllProducts(products){
+    async ListAllProducts(products) {
 
         return await Product.find(products);
     }
 
     //-------------Listar solo un accessorio-----------------//
 
-    async GetOneProduct(id){
+    async GetOneProduct(id) {
 
 
         return await Product.findById(id);
     }
 
-     //----------Guardar un accessorio en la base de datos---//  
+    //----------Guardar un accessorio en la base de datos---//  
 
-    async StoreProduct(MyProduct){
+    async StoreProduct(MyProduct) {
 
-       Product.create(MyProduct);
+        Product.create(MyProduct);
     }
 
 
-     //---------Modificar los datos del producto-------------//  
+    //---------Modificar los datos del producto-------------//  
 
-     
-    async updateProduct(id,product){
-        Product.findByIdAndUpdate(id,product)
+
+    async updateProduct(id, product) {
+        Product.findByIdAndUpdate(id, product)
     }
 
 
@@ -43,4 +43,4 @@ class ProductController{
 }
 
 let productController = new ProductController();
-module.exports= productController;
+module.exports = productController;

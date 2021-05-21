@@ -1,31 +1,31 @@
 const userController = require('./User-Controller');
-const  bycrypt = require('bcrypt');
+const bycrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const secret = 'Tarek Es el Mejor '
 
 
-class LoginController{
+class LoginController {
 
 
 
 
-    async validate(passwordCheck,emailCheck){
+    async validate(passwordCheck, emailCheck) {
 
-        let user =  await userController.getuserByEmail(emailCheck);
+        let user = await userController.getuserByEmail(emailCheck);
         let password = user.password;
-        let verify = await bycrypt.compare(passwordCheck,password)
-         
-        if(!verify){
+        let verify = await bycrypt.compare(passwordCheck, password)
+
+        if (!verify) {
             throw new Error('Contraseña erronea')
         }
-        let payload ={
-            user:user,
-            userId : user.id,
+        let payload = {
+            user: user,
+            userId: user.id,
             admin: user.admin,
             createdAt: new Date,
-            
+
         }
-         return jwt.sign(payload,secret);
+        return jwt.sign(payload, secret);
     }
 }
 
